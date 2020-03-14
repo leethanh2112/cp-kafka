@@ -37,7 +37,7 @@ spec:
         - name: KAF2_PORT
           value: "tcp://kaf2:9092"
         - name: KAF2_PORT_9092_TCP
-          value: "tcp://kaf1:9092"
+          value: "tcp://kaf2:9092"
         - name: KAF2_PORT_9092_TCP_ADDR
           value: "kaf2"
         - name: KAF2_PORT_9092_TCP_PORT
@@ -107,7 +107,7 @@ spec:
         - name: ZOO2_PORT_2181_TCP
           value: "tcp://zoo2:2181"
         - name: ZOO2_PORT_2181_TCP_ADDR
-          value: "ZOO2"
+          value: "zoo2"
         - name: ZOO2_PORT_2181_TCP_PORT
           value: "2181"
         - name: ZOO2_PORT_2181_TCP_PROTO
