@@ -1,3 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cp-kafka-configmap
+  labels:
+    app: cp-kafka
+data:
+  source-quickstart-mysql.properties: |
+    name=test-source-mysql-jdbc-autoincrement
+    connector.class=io.confluent.connect.jdbc.JdbcSourceConnector
+    tasks.max=1
+    connection.url=jdbc:mysql://mysql.database:3306/cpkafka?user=cp-kafka&password=21121986
+    mode=incrementing
+    incrementing.column.name=rollno
+    topic.prefix=cpkafka
+---
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
@@ -120,3 +136,10 @@ spec:
           value: "localhost"
         - name: CONNECT_PLUGIN_PATH
           value: "/usr/share/java"
+        volumeMounts:
+        - name: mysql-connector
+          mountPath: /etc/kafka-connect-jdbc
+      volumes:
+      - name: mysql-connector
+        configMap:
+          name: cp-kafka-configmap
