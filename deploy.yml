@@ -141,6 +141,10 @@ spec:
         - name: CONNECT_BOOTSTRAP_SERVERS
           value: "tcp://zoo1:9092"
         - name: CONNECT_GROUP_ID
-          value: "1"
+          value: "quickstart"
         - name: CONNECT_CONFIG_STORAGE_TOPIC
-          value: "database"
+          value: "quickstart-config"
+        - name: CONNECT_OFFSET_STORAGE_TOPIC
+          value: "quickstart-offsets"
+        - name: CONNECT_STATUS_STORAGE_TOPIC
+          value: "quickstart-status"
