@@ -148,3 +148,15 @@ spec:
           value: "quickstart-offsets"
         - name: CONNECT_STATUS_STORAGE_TOPIC
           value: "quickstart-status"
+        - name: CONNECT_KEY_CONVERTER
+          value: "org.apache.kafka.connect.json.JsonConverter"
+        - name: CONNECT_VALUE_CONVERTER
+          value: "org.apache.kafka.connect.json.JsonConverter"
+        - name: CONNECT_INTERNAL_KEY_CONVERTER
+          value: "org.apache.kafka.connect.json.JsonConverter"
+        - name: CONNECT_INTERNAL_VALUE_CONVERTER
+          value: "org.apache.kafka.connect.json.JsonConverter"
+        - name: CONNECT_REST_ADVERTISED_HOST_NAME
+          value: "10.0.15.101"
+        - name: CONNECT_PLUGIN_PATH
+          value: "/usr/share/java"
