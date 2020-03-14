@@ -1,0 +1,19 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: cp-kafka
+  namespace: system-msg
+spec:
+  selector:
+    matchLabels:
+      app: cp-kafka
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: cp-kafka
+    spec:
+      containers:
+      - image: confluentinc/cp-kafka-connect:latest
+        name: cp-kafka
