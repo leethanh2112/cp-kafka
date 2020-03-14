@@ -99,7 +99,7 @@ spec:
         - name: ZOO2_SERVICE_PORT_PORT_3888
           value: "3888"
         - name: CONNECT_BOOTSTRAP_SERVERS
-          value: "zoo1:9092,zoo2:9092"
+          value: "kaf1:9092,kaf2:9092"
         - name: CONNECT_GROUP_ID
           value: "quickstart"
         - name: CONNECT_CONFIG_STORAGE_TOPIC
