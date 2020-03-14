@@ -142,3 +142,5 @@ spec:
           value: "tcp://zoo1:9092"
         - name: CONNECT_GROUP_ID
           value: "1"
+        - name: CONNECT_CONFIG_STORAGE_TOPIC
+          value: "database"
