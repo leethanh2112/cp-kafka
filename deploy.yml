@@ -51,19 +51,19 @@ spec:
         - name: KAF2_SERVICE_PORT_PORT_9092
           value: "9092"
         - name: KAFKA_ADVERTISED_LISTENERS
-          value: "10.0.15.101,10.0.15.102"
+          value: "kaf1,kaf2"
         - name: KAFKA_MANAGER_PORT
-          value: "tcp://10.99.119.197:80"
+          value: "tcp://kafka-manager:80"
         - name: KAFKA_MANAGER_PORT_80_TCP
-          value: "tcp://10.99.119.197:80"
+          value: "tcp://kafka-manager:80"
         - name: KAFKA_MANAGER_PORT_80_TCP_ADDR
-          value: "10.99.119.197"
+          value: "kafka-manager"
         - name: KAFKA_MANAGER_PORT_80_TCP_PORT
           value: "80"
         - name: KAFKA_MANAGER_PORT_80_TCP_PROTO
           value: "tcp"
         - name: KAFKA_MANAGER_SERVICE_HOST
-          value: "10.99.119.197"
+          value: "kafka-manager"
         - name: KAFKA_MANAGER_SERVICE_PORT
           value: "80"
         - name: ZOO1_PORT
@@ -157,6 +157,6 @@ spec:
         - name: CONNECT_INTERNAL_VALUE_CONVERTER
           value: "org.apache.kafka.connect.json.JsonConverter"
         - name: CONNECT_REST_ADVERTISED_HOST_NAME
-          value: "10.0.15.101,10.0.15.102"
+          value: "localhost"
         - name: CONNECT_PLUGIN_PATH
           value: "/usr/share/java"
