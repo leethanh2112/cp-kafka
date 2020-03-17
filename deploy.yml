@@ -18,7 +18,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: cp-kafka
+  name: cp-kafka-pvc
   namespace: system-msg
 spec:
   accessModes:
@@ -150,10 +150,10 @@ spec:
         - name: CONNECT_PLUGIN_PATH
           value: "/usr/share/java,/etc/kafka-connect/"
         volumeMounts:
-        - name: cp-kafka
+        - name: driver-cfg
           mountPath: /etc/kafka-connect/jars
       volumes:
-      - name: cp-kafka
+      - name: driver-cfg
         persistentVolumeClaim:
-          claimName: cp-kafka
+          claimName: cp-kafka-pvc
 
