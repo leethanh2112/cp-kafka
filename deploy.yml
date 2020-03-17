@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: cp-kafka
+  name: driver-cfg
   namespace: system-msg
 spec:
   capacity:
@@ -18,7 +18,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: cp-kafka-pvc
+  name: driver-cfg
   namespace: system-msg
 spec:
   accessModes:
@@ -155,5 +155,5 @@ spec:
       volumes:
       - name: driver-cfg
         persistentVolumeClaim:
-          claimName: cp-kafka-pvc
+          claimName: driver-cfg
 
