@@ -137,6 +137,10 @@ spec:
           value: "connect-offsets"
         - name: CONNECT_STATUS_STORAGE_TOPIC
           value: "connect-status"
+        - name: CONNECT_REST_PORT
+          value: "8083"
+        - name: CONNECT_LOG4J_ROOT_LOGLEVEL
+          value: "DEBUG"
         - name: CONNECT_KEY_CONVERTER
           value: "org.apache.kafka.connect.json.JsonConverter"
         - name: CONNECT_VALUE_CONVERTER
