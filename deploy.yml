@@ -27,6 +27,35 @@ spec:
      requests:
        storage: 10Gi
 ---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sink-file
+  namespace: system-msg
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy:
+    Retain
+  nfs:
+    path: /tmp/data/cp-kafka/file
+    server: 10.0.15.1
+    readOnly: false
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sink-file
+  namespace: system-msg
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+     requests:
+       storage: 10Gi
+---
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
@@ -86,8 +115,15 @@ spec:
         volumeMounts:
         - name: driver-cfg
           mountPath: /etc/kafka-connect/jars
+        volumeMounts:
+        - name: sink-file
+          mountPath: /tmp/quickstart
       volumes:
       - name: driver-cfg
         persistentVolumeClaim:
           claimName: driver-cfg
+      - name: sink-file
+        persistentVolumeClaim:
+          claimName: sink-file
+
 
