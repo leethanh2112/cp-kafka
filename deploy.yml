@@ -50,7 +50,7 @@ spec:
         - name: CONNECT_BOOTSTRAP_SERVERS
           value: "kaf1:9092"
         - name: CONNECT_REST_PORT
-          value: "8083"
+          value: "28083"
         - name: CONNECT_GROUP_ID
           value: "quickstart-avro"
         - name: CONNECT_CONFIG_STORAGE_TOPIC
