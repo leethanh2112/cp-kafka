@@ -115,7 +115,6 @@ spec:
         volumeMounts:
         - name: driver-cfg
           mountPath: /etc/kafka-connect/jars
-        volumeMounts:
         - name: sink-file
           mountPath: /tmp/quickstart
       volumes:
