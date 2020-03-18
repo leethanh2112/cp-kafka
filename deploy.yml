@@ -56,6 +56,8 @@ spec:
         - name: CONNECT_CONFIG_STORAGE_TOPIC
           value: "quickstart-avro-config"
         - name: CONNECT_OFFSET_STORAGE_TOPIC
+          value: "quickstart-avro-offsets"
+        - name: CONNECT_STATUS_STORAGE_TOPIC
           value: "quickstart-avro-status"
         - name: CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR
           value: "1"
