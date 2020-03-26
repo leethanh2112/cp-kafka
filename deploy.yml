@@ -124,5 +124,18 @@ spec:
       - name: sink-file
         persistentVolumeClaim:
           claimName: sink-file
-
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cp-kafka
+  namespace: system-msg
+spec:
+  type: NodePort
+  ports:
+    - targetPort: 28083
+      port: 28083
+      nodePort: 30083
+  selector:
+    app: cp-kafka
 
